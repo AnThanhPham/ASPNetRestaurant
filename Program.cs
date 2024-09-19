@@ -1,15 +1,45 @@
 ﻿using ManagingRestaurant.Data;
 using ManagingRestaurant.Models;
+using ManagingRestaurant.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddOptions();                                        // Kích hoạt Options
+var mailsettings = builder.Configuration.GetSection("MailSettings");  // đọc config
+builder.Services.Configure<MailSettings>(mailsettings);               // đăng ký để Inject
+
+builder.Services.AddTransient<IEmailSender, SendMailService>();        // Đăng ký dịch vụ Mail
+
 //Đăng ký RestaurantContext là một DbContext của ứng dụng
 builder.Services.AddDbContext<RestaurantContext>(options => options
 .UseSqlServer(builder.Configuration.GetConnectionString("RestaurantContext")));
+
+
+//builder.Services.AddRazorPages();
+//// services.AddTransient(typeof(ILogger<>), typeof(Logger<>)); //Serilog
+//builder.Services.Configure<RazorViewEngineOptions>(options => {
+//    // /View/Controller/Action.cshtml
+//    // /MyView/Controller/Action.cshtml
+
+//    // {0} -> ten Action
+//    // {1} -> ten Controller
+//    // {2} -> ten Area
+//    options.ViewLocationFormats.Add("/MyView/{1}/{0}" + RazorViewEngine.ViewExtension);
+
+//    options.AreaViewLocationFormats.Add("/MyAreas/{2}/Views/{1}/{0}.cshtml");
+
+//});
+
+// services.AddSingleton<ProductService>();
+// services.AddSingleton<ProductService, ProductService>();
+// services.AddSingleton(typeof(ProductService));
+//services.AddSingleton(typeof(ProductService), typeof(ProductService));
+//services.AddSingleton<PlanetService>();
 
 // Đăng ký các dịch vụ của Identity
 builder.Services.AddIdentity<AppUser, IdentityRole>()
@@ -39,6 +69,7 @@ builder.Services.Configure<IdentityOptions>(options => {
     // Cấu hình đăng nhập.
     options.SignIn.RequireConfirmedEmail = true; // Cấu hình xác thực địa chỉ email (email phải tồn tại)
     options.SignIn.RequireConfirmedPhoneNumber = false; // Xác thực số điện thoại
+    options.SignIn.RequireConfirmedAccount = true;
 
 });
 
@@ -58,19 +89,22 @@ builder.Services.AddAuthentication()
                         // https://localhost:5001/signin-google
                         options.CallbackPath = "/dang-nhap-tu-google";
                     });
-                    //.AddFacebook(options => {
-                    //    var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
-                    //    options.AppId = fconfig["AppId"];
-                    //    options.AppSecret = fconfig["AppSecret"];
-                    //    options.CallbackPath = "/dang-nhap-tu-facebook";
-                    //})
-                    // .AddTwitter()
-                    // .AddMicrosoftAccount()
-builder.Services.Configure<SecurityStampValidatorOptions>(options =>
-{
-    // Trên 5 giây truy cập lại sẽ nạp lại thông tin User (Role)
-    // SecurityStamp trong bảng User đổi -> nạp lại thông tinn Security
-    options.ValidationInterval = TimeSpan.FromSeconds(5);
+//.AddFacebook(options => {
+//    var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
+//    options.AppId = fconfig["AppId"];
+//    options.AppSecret = fconfig["AppSecret"];
+//    options.CallbackPath = "/dang-nhap-tu-facebook";
+//})
+// .AddTwitter()
+// .AddMicrosoftAccount()
+
+builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
+
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("ViewManageMenu", builder => {
+        builder.RequireAuthenticatedUser();
+        builder.RequireRole(RoleName.Administrator);
+    });
 });
 
 // Add services to the container.

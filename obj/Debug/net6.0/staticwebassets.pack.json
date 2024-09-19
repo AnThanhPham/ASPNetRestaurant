@@ -37,22 +37,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
-    },
-    {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
@@ -67,54 +51,6 @@
     {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
@@ -133,22 +69,6 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
@@ -163,22 +83,6 @@
     {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
-    },
-    {
-      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
@@ -243,6 +147,34 @@
     {
       "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.css",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.css"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.js",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.js"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.min.css",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.min.css"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.min.css.map"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.min.js",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.min.js"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.min.js.map"
+    },
+    {
+      "Id": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\lib\\multiple-select\\multiple-select.png",
+      "PackagePath": "staticwebassets\\lib\\multiple-select\\multiple-select.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ManagingRestaurant.Microsoft.AspNetCore.StaticWebAssets.props",
