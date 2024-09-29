@@ -1,6 +1,7 @@
 ﻿using ManagingRestaurant.Data;
 using ManagingRestaurant.Models;
 using ManagingRestaurant.Services;
+using ManagingRestaurant.Upload;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,9 @@ var mailsettings = builder.Configuration.GetSection("MailSettings");  // đọc 
 builder.Services.Configure<MailSettings>(mailsettings);               // đăng ký để Inject
 
 builder.Services.AddTransient<IEmailSender, SendMailService>();        // Đăng ký dịch vụ Mail
+
+// đăng ký dịch vụ upload file
+builder.Services.AddTransient<IBufferedFileUploadService, BufferedFileUploadLocalService>();
 
 //Đăng ký RestaurantContext là một DbContext của ứng dụng
 //builder.Services.AddDbContext<RestaurantContext>(options => options
