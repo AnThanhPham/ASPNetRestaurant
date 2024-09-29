@@ -34,7 +34,6 @@ public class SendMailService : IEmailSender {
     public SendMailService (IOptions<MailSettings> _mailSettings, ILogger<SendMailService> _logger) {
         mailSettings = _mailSettings.Value;
         logger = _logger;
-        logger.LogInformation("Create SendMailService");
     }
 
    
@@ -42,13 +41,13 @@ public class SendMailService : IEmailSender {
         var message = new MimeMessage();
         message.Sender = new MailboxAddress(mailSettings.DisplayName, mailSettings.Mail);
         message.From.Add(new MailboxAddress(mailSettings.DisplayName, mailSettings.Mail));
-        message.To.Add (MailboxAddress.Parse (email));
+        message.To.Add(MailboxAddress.Parse(email));
         message.Subject = subject;
 
 
         var builder = new BodyBuilder();
         builder.HtmlBody = htmlMessage;
-        message.Body = builder.ToMessageBody ();
+        message.Body = builder.ToMessageBody();
 
         // dùng SmtpClient của MailKit
         using var smtp = new MailKit.Net.Smtp.SmtpClient();

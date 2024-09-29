@@ -1,4 +1,3 @@
-@using ManagingRestaurant.Areas.Identity.Models.RoleViewModels
 @model EditRoleModel
  
 @{
@@ -37,8 +36,6 @@
                         <a asp-action="EditRoleClaim" asp-route-claimid="@claim.Id">
                             @claim.ClaimType  : @claim.ClaimValue
                         </a>
-                        
-
                     </li>
                 }
             </ul>

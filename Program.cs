@@ -16,8 +16,12 @@ builder.Services.Configure<MailSettings>(mailsettings);               // đăng 
 builder.Services.AddTransient<IEmailSender, SendMailService>();        // Đăng ký dịch vụ Mail
 
 //Đăng ký RestaurantContext là một DbContext của ứng dụng
-builder.Services.AddDbContext<RestaurantContext>(options => options
-.UseSqlServer(builder.Configuration.GetConnectionString("RestaurantContext")));
+//builder.Services.AddDbContext<RestaurantContext>(options => options
+//.UseSqlServer(builder.Configuration.GetConnectionString("RestaurantContext")));
+builder.Services.AddDbContext<RestaurantContext>(options => {
+    string connectString = builder.Configuration.GetConnectionString("RestaurantContext");
+    options.UseSqlServer(connectString);
+});
 
 
 //builder.Services.AddRazorPages();
@@ -31,7 +35,7 @@ builder.Services.AddDbContext<RestaurantContext>(options => options
 //    // {2} -> ten Area
 //    options.ViewLocationFormats.Add("/MyView/{1}/{0}" + RazorViewEngine.ViewExtension);
 
-//    options.AreaViewLocationFormats.Add("/MyAreas/{2}/Views/{1}/{0}.cshtml");
+//    options.AreaViewLocationFormats.Add("/My  /{2}/Views/{1}/{0}.cshtml");
 
 //});
 
@@ -100,8 +104,10 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
 
-builder.Services.AddAuthorization(options => {
-    options.AddPolicy("ViewManageMenu", builder => {
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ViewManageMenu", builder =>
+    {
         builder.RequireAuthenticatedUser();
         builder.RequireRole(RoleName.Administrator);
     });
@@ -111,13 +117,6 @@ builder.Services.AddAuthorization(options => {
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    DbInitializer.Initialize(services);
-}
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -134,6 +133,20 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+});
+
+app.MapAreaControllerRoute(
+    name: "contact",
+    pattern: "/{controller}/{action=Index}/{id?}",
+    areaName: "ProductManage"
+);
 
 app.MapControllerRoute(
     name: "default",
