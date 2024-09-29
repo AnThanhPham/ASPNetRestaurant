@@ -5,10 +5,12 @@ namespace ManagingRestaurant.Models
 {
     public class DishReview
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
+
         public int Rating { get; set; }
 
-        [Column(TypeName = "NVARCHAR(MAX)")]
+        [Column(TypeName = "ntext")]
         public string comment { get; set; }
 
         [DataType(DataType.Date)]

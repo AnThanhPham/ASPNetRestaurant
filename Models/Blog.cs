@@ -10,17 +10,23 @@ namespace ManagingRestaurant.Models
             Comments = new HashSet<Comment>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
-        public string name { get; set; }
+        [Column(TypeName = "nvarchar(200)")]
+        [Required]
+        [Display(Name = "Title")]
+        public string Title { get; set; }
 
-        public string? image { get; set; }
+        [Display(Name = "Image")]
+        [Column(TypeName = "ntext")]
+        public string? Image { get; set; }
 
-        [Column(TypeName = "NVARCHAR(MAX)")]
+        [Column(TypeName = "ntext")]
         public string ShortDesc { get; set; }
 
 
-        [Column(TypeName = "NVARCHAR(MAX)")]
+        [Column(TypeName = "ntext")]
         public string Desciption { get; set; }
 
         [DataType(DataType.Date)]
@@ -30,6 +36,6 @@ namespace ManagingRestaurant.Models
         public DateTime? Update_at { set; get; }
 
         public virtual AppUser? AppUser { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comment>? Comments { get; set; }
     }
 }

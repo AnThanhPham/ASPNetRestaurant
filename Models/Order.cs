@@ -2,10 +2,6 @@
 
 namespace ManagingRestaurant.Models
 {
-    public enum StatusOrder
-    {
-        pending,paid,cancelled
-    }
     public class Order
     {
         public Order()
@@ -13,7 +9,8 @@ namespace ManagingRestaurant.Models
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         public double TotalPrice { get; set; }
         [DataType(DataType.Date)]
         public DateTime? Created_at { set; get; }
@@ -21,7 +18,7 @@ namespace ManagingRestaurant.Models
         [DataType(DataType.Date)]
         public DateTime? Updated_at { set; get; }
 
-        public StatusOrder? Status { get; set; }
+        public string? Status { get; set; }
         public virtual AppUser? AppUser { get; set; }
         public virtual Customer? Customer { get; set; }
         public virtual Payment? Payment { get; set; }

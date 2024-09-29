@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagingRestaurant.Models
 {
@@ -9,13 +10,19 @@ namespace ManagingRestaurant.Models
             Dishes = new HashSet<Dish>();
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
-        [Column(TypeName = "NVARCHAR(MAX)")]
+        [Column(TypeName = "nvarchar(200)")]
+        [Required]
+        [Display(Name = "Title")]
+        public string Title { get; set; }
+
+        [Column(TypeName = "nvarchar(250)")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
-        public int Status { get; set; } // 1 là vẫn dùng, 2 là không dùng
-        public virtual ICollection<Dish> Dishes { get; set; }
+        public bool IsActive { get; set; }
+        public virtual ICollection<Dish>? Dishes { get; set; }
     }
 }

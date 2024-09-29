@@ -2,19 +2,15 @@
 
 namespace ManagingRestaurant.Models
 {
-    public enum StatusReservation
-    {
-        pending,confirmed,cancelled
-    }
-
     public class Reservation
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime? Reservation_Time { set; get; }
 
-        public StatusReservation? Status { get; set; }
+        public string? Status { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime? Created_at { set; get; }

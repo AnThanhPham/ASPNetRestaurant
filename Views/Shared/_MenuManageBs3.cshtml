@@ -13,9 +13,11 @@
             Manage
         </a>
         <div class="dropdown-menu" aria-labelledby="managedropdownmenu">
-            <a class="dropdown-item" asp-action="Index" asp-controller="DbManage" asp-area="Database">
-                Database
-            </a>
+            <li>
+                <a class="dropdown-item" asp-action="IndexHome" asp-controller="Home" asp-area="Admin">
+                    Page Admin
+                </a>
+            </li>
             <a class="dropdown-item" asp-action="Index" asp-controller="Role" asp-area="Identity">
                 Quản lý role (vai trò)
             </a>

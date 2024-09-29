@@ -84,6 +84,11 @@ builder.Services.ConfigureApplicationCookie(options => {
     options.AccessDeniedPath = "/khongduoctruycap.html";
 });
 
+//Seed Data
+SeedData seed = new(builder.Services.BuildServiceProvider().CreateScope().ServiceProvider.GetRequiredService<RestaurantContext>());
+await seed.SeedRole();
+await seed.SeedUser();
+
 builder.Services.AddAuthentication()
                     .AddGoogle(options =>
                     {

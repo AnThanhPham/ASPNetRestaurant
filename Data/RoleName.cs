@@ -4,6 +4,6 @@ namespace ManagingRestaurant.Data
     {
         public const string Administrator = "Administrator";
         public const string Manager = "Manager";
-        public const string Member = "Member";
+        public const string User = "User";
     }
 }

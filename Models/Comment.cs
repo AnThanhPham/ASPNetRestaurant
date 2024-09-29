@@ -5,9 +5,10 @@ namespace ManagingRestaurant.Models
 {
     public class Comment
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
-        [Column(TypeName = "NVARCHAR(MAX)")]
+        [Column(TypeName = "ntext")]
         public string Content { get; set; }
 
         [DataType(DataType.Date)]

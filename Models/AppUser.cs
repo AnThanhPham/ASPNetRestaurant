@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagingRestaurant.Models
 {
@@ -14,6 +16,10 @@ namespace ManagingRestaurant.Models
         }
 
         public int Status;
+
+        [Column(TypeName = "ntext")]
+        [DefaultValue("https://www.pngkey.com/png/full/72-729716_user-avatar-png-graphic-free-download-icon.png")]
+        public string? Image { get; set; }
 
         [MaxLength(100)]
         public string? FullName { set; get; }

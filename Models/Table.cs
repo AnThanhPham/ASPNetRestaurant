@@ -1,9 +1,7 @@
-﻿namespace ManagingRestaurant.Models
-{
-    public enum StatusTable {
-        available,reserved
-    }
+﻿using System.ComponentModel.DataAnnotations;
 
+namespace ManagingRestaurant.Models
+{
     public class Table
     {
         public Table()
@@ -12,12 +10,13 @@
             Orders = new HashSet<Order>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         public string Table_Number { get; set; }
         public int Capacity { get; set; }
 
-        public StatusTable? Status { get; set; }
-        public virtual ICollection<Reservation> Reservations { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public string? Status { get; set; }
+        public virtual ICollection<Reservation>? Reservations { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
     }
 }
