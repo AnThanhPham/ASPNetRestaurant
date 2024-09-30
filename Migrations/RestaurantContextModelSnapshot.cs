@@ -122,10 +122,14 @@ namespace ManagingRestaurant.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime?>("Created_at")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Desciption")
                         .IsRequired()
@@ -133,6 +137,9 @@ namespace ManagingRestaurant.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("ntext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("ShortDesc")
                         .IsRequired()
@@ -142,14 +149,17 @@ namespace ManagingRestaurant.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime?>("Update_at")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Blogs", (string)null);
+                    b.ToTable("Blogs");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Category", b =>
@@ -171,7 +181,7 @@ namespace ManagingRestaurant.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Comment", b =>
@@ -180,29 +190,90 @@ namespace ManagingRestaurant.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("BlogId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("ntext");
 
-                    b.Property<DateTime?>("Created_at")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("CustomerId")
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProductId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BlogId");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("Comments", (string)null);
+                    b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.Customer", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.New", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Desciption")
+                        .IsRequired()
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("ntext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ShortDesc")
+                        .IsRequired()
+                        .HasColumnType("ntext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("News");
+                });
+
+            modelBuilder.Entity("ManagingRestaurant.Models.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -210,38 +281,111 @@ namespace ManagingRestaurant.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("AppUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Code")
                         .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("CustomerEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("CustomerName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<bool>("IsConfirmByShop")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsConfirmByUser")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MethodPay")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("TableId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Customers", (string)null);
+                    b.HasIndex("TableId");
+
+                    b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.Dish", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.OrderDetail", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("ManagingRestaurant.Models.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -257,175 +401,53 @@ namespace ManagingRestaurant.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ProductCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("ShortDesc")
                         .IsRequired()
                         .HasColumnType("ntext");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Dishes", (string)null);
+                    b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.DishReview", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.ProductImage", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DishId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<string>("comment")
-                        .IsRequired()
-                        .HasColumnType("ntext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("DishId");
-
-                    b.ToTable("DishReviews", (string)null);
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Order", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("PaymentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("TableId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime?>("Updated_at")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("PaymentId");
-
-                    b.HasIndex("TableId");
-
-                    b.ToTable("Orders", (string)null);
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.OrderDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DishId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int?>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<decimal?>("Unit_price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DishId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("OrderDetails", (string)null);
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Page", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Desciption")
-                        .IsRequired()
-                        .HasColumnType("ntext");
 
                     b.Property<string>("Image")
-                        .HasColumnType("ntext");
+                        .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("ShortDesc")
-                        .IsRequired()
-                        .HasColumnType("ntext");
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime?>("Update_at")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("Pages", (string)null);
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Payment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Payments", (string)null);
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Reservation", b =>
@@ -434,11 +456,9 @@ namespace ManagingRestaurant.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("Reservation_Time")
                         .HasColumnType("datetime2");
@@ -449,16 +469,13 @@ namespace ManagingRestaurant.Migrations
                     b.Property<Guid?>("TableId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("Updated_at")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("TableId");
 
-                    b.ToTable("Reservations", (string)null);
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Table", b =>
@@ -479,7 +496,7 @@ namespace ManagingRestaurant.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tables", (string)null);
+                    b.ToTable("Tables");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -618,40 +635,84 @@ namespace ManagingRestaurant.Migrations
             modelBuilder.Entity("ManagingRestaurant.Models.Blog", b =>
                 {
                     b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
-                        .WithMany("Blogs")
-                        .HasForeignKey("AppUserId");
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Comment", b =>
                 {
-                    b.HasOne("ManagingRestaurant.Models.Blog", "Blog")
+                    b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagingRestaurant.Models.Product", "Product")
                         .WithMany("Comments")
-                        .HasForeignKey("BlogId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("ManagingRestaurant.Models.Customer", "Customer")
-                        .WithMany("Comments")
-                        .HasForeignKey("CustomerId");
+                    b.Navigation("AppUser");
 
-                    b.Navigation("Blog");
-
-                    b.Navigation("Customer");
+                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.Customer", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.New", b =>
                 {
                     b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
-                        .WithMany("Customers")
-                        .HasForeignKey("AppUserId");
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.Dish", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.Order", b =>
+                {
+                    b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
+                        .WithMany("Orders")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagingRestaurant.Models.Table", "Table")
+                        .WithMany("Orders")
+                        .HasForeignKey("TableId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Table");
+                });
+
+            modelBuilder.Entity("ManagingRestaurant.Models.OrderDetail", b =>
+                {
+                    b.HasOne("ManagingRestaurant.Models.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagingRestaurant.Models.Product", "Product")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("ManagingRestaurant.Models.Product", b =>
                 {
                     b.HasOne("ManagingRestaurant.Models.Category", "Category")
-                        .WithMany("Dishes")
+                        .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -659,83 +720,30 @@ namespace ManagingRestaurant.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.DishReview", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.ProductImage", b =>
                 {
-                    b.HasOne("ManagingRestaurant.Models.Customer", "Customer")
-                        .WithMany("DishReviews")
-                        .HasForeignKey("CustomerId");
+                    b.HasOne("ManagingRestaurant.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("ManagingRestaurant.Models.Dish", "Dish")
-                        .WithMany("DishReviews")
-                        .HasForeignKey("DishId");
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Dish");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Order", b =>
-                {
-                    b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
-                        .WithMany("Orders")
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("ManagingRestaurant.Models.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("ManagingRestaurant.Models.Payment", "Payment")
-                        .WithMany("Orders")
-                        .HasForeignKey("PaymentId");
-
-                    b.HasOne("ManagingRestaurant.Models.Table", "Table")
-                        .WithMany("Orders")
-                        .HasForeignKey("TableId");
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Payment");
-
-                    b.Navigation("Table");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.OrderDetail", b =>
-                {
-                    b.HasOne("ManagingRestaurant.Models.Dish", "Dish")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("DishId");
-
-                    b.HasOne("ManagingRestaurant.Models.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId");
-
-                    b.Navigation("Dish");
-
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Page", b =>
-                {
-                    b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
-                        .WithMany("Pages")
-                        .HasForeignKey("AppUserId");
-
-                    b.Navigation("AppUser");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Reservation", b =>
                 {
-                    b.HasOne("ManagingRestaurant.Models.Customer", "Customer")
-                        .WithMany("Reservations")
-                        .HasForeignKey("CustomerId");
+                    b.HasOne("ManagingRestaurant.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ManagingRestaurant.Models.Table", "Table")
                         .WithMany("Reservations")
                         .HasForeignKey("TableId");
 
-                    b.Navigation("Customer");
+                    b.Navigation("AppUser");
 
                     b.Navigation("Table");
                 });
@@ -793,41 +801,12 @@ namespace ManagingRestaurant.Migrations
 
             modelBuilder.Entity("ManagingRestaurant.Models.AppUser", b =>
                 {
-                    b.Navigation("Blogs");
-
-                    b.Navigation("Customers");
-
                     b.Navigation("Orders");
-
-                    b.Navigation("Pages");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Blog", b =>
-                {
-                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Category", b =>
                 {
-                    b.Navigation("Dishes");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Customer", b =>
-                {
-                    b.Navigation("Comments");
-
-                    b.Navigation("DishReviews");
-
-                    b.Navigation("Orders");
-
-                    b.Navigation("Reservations");
-                });
-
-            modelBuilder.Entity("ManagingRestaurant.Models.Dish", b =>
-                {
-                    b.Navigation("DishReviews");
-
-                    b.Navigation("OrderDetails");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Order", b =>
@@ -835,9 +814,13 @@ namespace ManagingRestaurant.Migrations
                     b.Navigation("OrderDetails");
                 });
 
-            modelBuilder.Entity("ManagingRestaurant.Models.Payment", b =>
+            modelBuilder.Entity("ManagingRestaurant.Models.Product", b =>
                 {
-                    b.Navigation("Orders");
+                    b.Navigation("Comments");
+
+                    b.Navigation("OrderDetails");
+
+                    b.Navigation("ProductImages");
                 });
 
             modelBuilder.Entity("ManagingRestaurant.Models.Table", b =>

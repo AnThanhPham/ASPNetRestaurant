@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagingRestaurant.Models
 {
-    public class Comment
+    public class Comment : Common
     {
         [Key]
         public Guid Id { get; set; }
@@ -11,10 +11,15 @@ namespace ManagingRestaurant.Models
         [Column(TypeName = "ntext")]
         public string Content { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Created_at { set; get; }
+        public int Rating { get; set; }
 
-        public virtual Blog? Blog {  get; set; }
-        public virtual Customer? Customer { get; set; }
+        [Required]
+        public Guid? ProductId { get; set; }
+        public virtual Product? Product { get; set; }
+
+        [Required]
+        public string? AppUserId { get; set; }
+
+        public virtual AppUser? AppUser { get; set; }
     }
 }

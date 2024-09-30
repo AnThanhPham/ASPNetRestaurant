@@ -3,12 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagingRestaurant.Models
 {
-    public class Dish
+    public class Product : Common
     {
-        public Dish()
+        public Product()
         {
-            DishReviews = new HashSet<DishReview>();
+            Comments = new HashSet<Comment>();
             OrderDetails = new HashSet<OrderDetail>();
+            ProductImages = new HashSet<ProductImage>();
         }
 
         [Key]
@@ -20,7 +21,15 @@ namespace ManagingRestaurant.Models
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        public double Price { get; set; }
+        [Column(TypeName = "nvarchar(200)")]
+        [Required]
+        public string? ProductCode { get; set; }
+
+        [Required]
+        public decimal Price { get; set; }
+
+        [Required]
+        public int Quantity { get; set; }
 
         [Column(TypeName = "ntext")]
         [Display(Name = "Image")]
@@ -32,8 +41,12 @@ namespace ManagingRestaurant.Models
         public bool IsActive { get; set; }
 
         [Required]
+        public Guid? CategoryId { get; set; }
+
         public virtual Category? Category { get; set; }
-        public virtual ICollection<DishReview>? DishReviews { get; set; }
+
+        public virtual ICollection<ProductImage>? ProductImages { get; set; }
+        public virtual ICollection<Comment>? Comments { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }

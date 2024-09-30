@@ -3,11 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ManagingRestaurant.Models
 {
-    public class Blog
+    public class Blog : Common
     {
         public Blog()
         {
-            Comments = new HashSet<Comment>();
         }
 
         [Key]
@@ -29,13 +28,11 @@ namespace ManagingRestaurant.Models
         [Column(TypeName = "ntext")]
         public string Desciption { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Created_at { set; get; }
+        public bool IsActive { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Update_at { set; get; }
+        [Required]
+        public string? AppUserId { get; set; }
 
         public virtual AppUser? AppUser { get; set; }
-        public virtual ICollection<Comment>? Comments { get; set; }
     }
 }

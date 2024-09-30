@@ -12,12 +12,13 @@ namespace ManagingRestaurant.Models
 
         public string? Status { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Created_at { set; get; }
+        [Required]
+        public string? AppUserId { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Updated_at { set; get; }
-        public virtual Customer? Customer { get; set; }
+        public virtual AppUser? AppUser { get; set; }
+
+        public Guid? TableId { get; set; }
+
         public virtual Table? Table { get; set; }
     }
 }

@@ -9,9 +9,6 @@ namespace ManagingRestaurant.Models
     {
         public AppUser()
         {
-            Blogs = new HashSet<Blog>();
-            Pages = new HashSet<Page>();
-            Customers = new HashSet<Customer>();
             Orders = new HashSet<Order>();
         }
 
@@ -41,10 +38,6 @@ namespace ManagingRestaurant.Models
 
         [MaxLength(255)]
         public string? Update_by { set; get; }
-
-        public virtual ICollection<Blog> Blogs { get; set; }
-        public virtual ICollection<Page> Pages { get; set; }
-        public virtual ICollection<Customer> Customers { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
     }
 }

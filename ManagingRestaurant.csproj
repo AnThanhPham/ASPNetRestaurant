@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Blog\**" />
     <Compile Remove="wwwroot\assets\**" />
     <Compile Remove="wwwroot\lib\summernote\**" />
+    <Content Remove="Areas\Blog\**" />
     <Content Remove="wwwroot\assets\**" />
     <Content Remove="wwwroot\lib\summernote\**" />
+    <EmbeddedResource Remove="Areas\Blog\**" />
     <EmbeddedResource Remove="wwwroot\assets\**" />
     <EmbeddedResource Remove="wwwroot\lib\summernote\**" />
+    <None Remove="Areas\Blog\**" />
     <None Remove="wwwroot\assets\**" />
     <None Remove="wwwroot\lib\summernote\**" />
   </ItemGroup>
@@ -56,10 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Blog\Controllers\" />
-    <Folder Include="Areas\Blog\Data\" />
-    <Folder Include="Areas\Blog\Models\" />
-    <Folder Include="Areas\Blog\Views\" />
     <Folder Include="Areas\Contact\Controllers\" />
     <Folder Include="Areas\Contact\Data\" />
     <Folder Include="Areas\Contact\Models\" />

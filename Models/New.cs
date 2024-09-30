@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ManagingRestaurant.Models
 {
-    public class Page
+    public class New : Common
     {
         [Key]
         public Guid Id { get; set; }
@@ -23,11 +23,10 @@ namespace ManagingRestaurant.Models
         [Column(TypeName = "ntext")]
         public string Desciption { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Created_at { set; get; }
+        public bool IsActive { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime? Update_at { set; get; }
+        [Required]
+        public string? AppUserId { get; set; }
 
         public virtual AppUser? AppUser { get; set; }
     }

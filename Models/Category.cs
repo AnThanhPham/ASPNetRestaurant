@@ -7,7 +7,7 @@ namespace ManagingRestaurant.Models
     {
         public Category()
         {
-            Dishes = new HashSet<Dish>();
+            Products = new HashSet<Product>();
         }
 
         [Key]
@@ -23,6 +23,6 @@ namespace ManagingRestaurant.Models
         public string Description { get; set; }
 
         public bool IsActive { get; set; }
-        public virtual ICollection<Dish>? Dishes { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 }
