@@ -30,7 +30,6 @@ namespace ManagingRestaurant.Models
 
         public bool IsActive { get; set; }
 
-        [Required]
         public string? AppUserId { get; set; }
 
         public virtual AppUser? AppUser { get; set; }

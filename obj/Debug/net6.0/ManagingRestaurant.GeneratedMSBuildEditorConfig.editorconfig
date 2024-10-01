@@ -30,6 +30,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Blogs/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQmxvZ3NcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Cart/Views/Home/CartIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FydFxWaWV3c1xIb21lXENhcnRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +84,34 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Category/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2F0ZWdvcnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/Home/Okok.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xIb21lXE9rb2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Contact/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udGFjdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Identity/Views/Account/AccessDenied.cshtml]
@@ -240,6 +292,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/News/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTmV3c1xWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/Home/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcSG9tZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/Home/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Order/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3JkZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Document/ASP.NET-Web/ManagingRestaurant/ManagingRestaurant/Areas/Payment/Views/Home/Confirm.cshtml]

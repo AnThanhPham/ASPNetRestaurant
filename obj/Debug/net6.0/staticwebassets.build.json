@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WGi9/OZMMP/rjIDajF18UBcXQ9ikLp/ktrxOB/TQb8s=",
+  "Hash": "JQz2nIiXc/pbAQtXw+MUwVbyqI3r0YqdkTUcL0XB8SY=",
   "Source": "ManagingRestaurant",
   "BasePath": "_content/ManagingRestaurant",
   "Mode": "Default",
@@ -5204,25 +5204,6 @@
       "OriginalItemSpec": "wwwroot\\lib\\multiple-select\\multiple-select.png"
     },
     {
-      "Identity": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\UploadedFiles\\anh2.png",
-      "SourceId": "ManagingRestaurant",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\",
-      "BasePath": "_content/ManagingRestaurant",
-      "RelativePath": "UploadedFiles/anh2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\UploadedFiles\\anh2.png"
-    },
-    {
       "Identity": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\UploadedFiles\\Screenshot 2023-06-15 185321.png",
       "SourceId": "ManagingRestaurant",
       "SourceType": "Discovered",
@@ -5240,25 +5221,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\UploadedFiles\\Screenshot 2023-06-15 185321.png"
-    },
-    {
-      "Identity": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\UploadedFiles\\Screenshot 2023-06-22 171828.png",
-      "SourceId": "ManagingRestaurant",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\",
-      "BasePath": "_content/ManagingRestaurant",
-      "RelativePath": "UploadedFiles/Screenshot 2023-06-22 171828.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\UploadedFiles\\Screenshot 2023-06-22 171828.png"
     },
     {
       "Identity": "D:\\Document\\ASP.NET-Web\\ManagingRestaurant\\ManagingRestaurant\\wwwroot\\UploadedFiles\\Screenshot 2023-06-29 214906.png",

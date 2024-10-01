@@ -1,4 +1,4 @@
-@* @model ManagingRestaurant.Areas.News.Models.IndexNewsModel
+@model ManagingRestaurant.Areas.News.Models.IndexNewsModel
 @using X.PagedList.Mvc.Core;
 @using X.PagedList;
 @{
@@ -53,7 +53,7 @@
                     @index
                 </td>
                 <td>
-                    <img src="@item.Image" alt="image" style="width: 90px; height: 90px;"/>
+                        <img src="@Url.Content("~/UploadedFiles/" + item.Image)" alt="image" style="width: 90px; height: 90px;" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
@@ -83,14 +83,14 @@
     <div class="m-3 d-flex flex-row-reverse">
         @Html.PagedListPager(Model.news, page => Url.Action("Index", new { page, searchString = searchStr }))
     </div>
-</div> *@
+</div>
 @* overlay *@
-@* <div id="overlay" class="d-none">
+<div id="overlay" class="d-none">
     <div class="loader-wrap">
         <div class="loader"></div>
     </div>
-</div> *@
+</div>
 @* notification toast *@
-@* <div id="notiToast"></div>
+<div id="notiToast"></div>
 <script src="~/Assets/JsFunction/SelectAllToDelete.js"></script>
-<script src="~/Assets/JsFunction/SearchPagination.js"></script> *@
+<script src="~/Assets/JsFunction/SearchPagination.js"></script>

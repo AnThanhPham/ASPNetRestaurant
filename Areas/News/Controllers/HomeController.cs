@@ -1,4 +1,4 @@
-/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,11 +32,11 @@ namespace ManagingRestaurant.Areas.News.Controllers
         // GET: News/Home
         public async Task<IActionResult> Index(string? searchString, int? page = 1)
         {
-            if(_context.News == null)
+            if (_context.News == null)
             {
-                return Problem("Entity set 'AppDbContext.News'  is null.");
+                return Problem("Entity set 'RestaurantContext.News'  is null.");
             }
-            var news = _context.News.OrderByDescending( n => n.CreatedAt).ToPagedList(page ?? 1, ITEM_PER_PAGE);
+            var news = _context.News.OrderByDescending(n => n.CreatedAt).ToPagedList(page ?? 1, ITEM_PER_PAGE);
             if (!string.IsNullOrEmpty(searchString))
             {
                 news = _context.News.Where(n => n.Title.Contains(searchString)).OrderByDescending(n => n.CreatedAt).ToPagedList(page ?? 1, ITEM_PER_PAGE);
@@ -49,7 +49,7 @@ namespace ManagingRestaurant.Areas.News.Controllers
             };
             return View(model);
         }
-        
+
 
         // GET: News/Home/Details/5
         public async Task<IActionResult> Details(Guid? id)
@@ -81,7 +81,7 @@ namespace ManagingRestaurant.Areas.News.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
-            [Bind("Id,Title,Description,Detail,SeoTitle,SeoDescription,SeoKeywords,IsActive")] ManagingRestaurant.Models.News news,
+            [Bind("Id,Title,Desciption,ShortDesc,IsActive")] ManagingRestaurant.Models.New news,
             IFormFile? file)
         {
             if (ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace ManagingRestaurant.Areas.News.Controllers
                 if (file != null)
                 {
                     string imageLink = await _uploadService.UploadFile(file);
-                    if(!string.IsNullOrEmpty(imageLink))
+                    if (!string.IsNullOrEmpty(imageLink))
                     {
                         news.Image = imageLink;
                     }
@@ -128,8 +128,8 @@ namespace ManagingRestaurant.Areas.News.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id,IFormFile? file,
-            [Bind("Id,Title,Description,Detail,Image,SeoTitle,SeoDescription,SeoKeywords,IsActive,CreatedAt,CreatedBy")] ManagingRestaurant.Models.News news)
+        public async Task<IActionResult> Edit(Guid id, IFormFile? file,
+            [Bind("Id,Title,Desciption,ShortDesc,Image,IsActive,CreatedAt,CreatedBy")] ManagingRestaurant.Models.New news)
         {
             if (id != news.Id)
             {
@@ -143,11 +143,11 @@ namespace ManagingRestaurant.Areas.News.Controllers
                     if (file != null)
                     {
                         string imageLink = await _uploadService.UploadFile(file);
-                        if(!string.IsNullOrEmpty(imageLink))
+                        if (!string.IsNullOrEmpty(imageLink))
                         {
-                            if(news.Image != null)
+                            if (news.Image != null)
                             {
-                               await _uploadService.DeleteFile(news.Image);
+                                await _uploadService.DeleteFile(news.Image);
                             }
                             news.Image = imageLink;
                         }
@@ -204,31 +204,31 @@ namespace ManagingRestaurant.Areas.News.Controllers
             var news = await _context.News.FindAsync(id);
             if (news != null)
             {
-                if(news.Image != null)
+                if (news.Image != null)
                 {
                     await _uploadService.DeleteFile(news.Image);
                 }
                 _context.News.Remove(news);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        
+
         [HttpGet]
         public IActionResult DeleteMany()
         {
             return Json(new { success = true, message = "test" });
         }
-        
+
         [HttpPost]
-        public async Task<IActionResult> DeleteMany([FromBody]string? data)
+        public async Task<IActionResult> DeleteMany([FromBody] string? data)
         {
             if (_context.News == null)
             {
                 return Json(new { success = false, message = "Entity set 'AppDbContext.News'  is null." });
             }
-            if(data == null)
+            if (data == null)
             {
                 return Json(new { success = false, message = "Data is null." });
             }
@@ -240,7 +240,7 @@ namespace ManagingRestaurant.Areas.News.Controllers
                     var news = await _context.News.FindAsync(guid);
                     if (news != null)
                     {
-                        if(news.Image != null)
+                        if (news.Image != null)
                         {
                             await _uploadService.DeleteFile(news.Image);
                         }
@@ -253,8 +253,7 @@ namespace ManagingRestaurant.Areas.News.Controllers
         }
         private bool NewsExists(Guid id)
         {
-          return (_context.News?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.News?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
-*/

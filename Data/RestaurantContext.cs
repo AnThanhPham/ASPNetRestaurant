@@ -1,6 +1,7 @@
 ﻿using ManagingRestaurant.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ManagingRestaurant.Models;
 using System;
 
 namespace ManagingRestaurant.Data
@@ -13,12 +14,15 @@ namespace ManagingRestaurant.Data
         public DbSet<New> News { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Table> Tables { get; set; }
+
+        public DbSet<Statistical> Statisticals { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
